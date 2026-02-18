@@ -12,6 +12,13 @@ struct Projectile {
     float existTime; 
     float damage;
 
-    Projectile(float x, float y, float velX, float velY, float r, int owner, float dmg);
+    Projectile(float x, float y, float velX, float velY, float r, int owner);
     SDL_FRect getRect() const;
+
+    void update(float deltaTime);
+    bool checkWallBounce();
+    bool checkPlatformBounce(const SDL_FRect& platRect);
+    bool checkHitPlayer(const SDL_FRect& playerRect);
+
+    void deactivate();
 };
