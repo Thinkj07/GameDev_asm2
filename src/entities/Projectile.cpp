@@ -1,7 +1,7 @@
 #include "../../include/entities/Projectile.h"
 #include "../../include/utils/Constants.h"
 
-Projectile::Projectile(float x, float y, float velX, float velY, float r, int owner)
+Projectile::Projectile(float x, float y, float velX, float velY, float r, int owner, float damage)
     : position(x, y), 
       velocity(velX, velY), 
       radius(r), 
@@ -9,7 +9,7 @@ Projectile::Projectile(float x, float y, float velX, float velY, float r, int ow
       active(true), 
       bounceCount(0),
       existTime(0.0f),
-      damage(0.0f)
+      damage(damage)
 {
     float range = MAX_BULLET_RADIUS - MIN_BULLET_RADIUS;
     float ratio = (range > 0.0f) ? (radius - MIN_BULLET_RADIUS) / range : 0.0f;

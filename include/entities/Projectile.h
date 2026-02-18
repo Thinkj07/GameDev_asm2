@@ -12,7 +12,7 @@ struct Projectile {
     float existTime; 
     float damage;
 
-    Projectile(float x, float y, float velX, float velY, float r, int owner);
+    Projectile(float x, float y, float velX, float velY, float r, int owner, float damage);
     SDL_FRect getRect() const;
 
     void update(float deltaTime);
